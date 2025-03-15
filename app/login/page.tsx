@@ -300,10 +300,10 @@ export default function Login() {
           </Tabs>
           <motion.div
             initial={{
-              height: selected === "login" ? "auto" : "30rem",
+              height: selected === "login" ? "auto" : "28rem",
             }}
             animate={{
-              height: selected === "login" ? "auto" : "30rem",
+              height: selected === "login" ? "auto" : "28rem",
             }}
             transition={{
               duration: 0.2,

@@ -567,7 +567,7 @@ export default function Topbar() {
               className={` left-0 transition-opacity  border-b z-10 right-0 mx-auto w-full ${
                 scroll > 0
                   ? !focus
-                    ? " border-opacity-100 border-zinc-200 bg-white bg-opacity-90 backdrop-blur-3xl dark:border-zinc-70"
+                    ? " border-opacity-100 border-zinc-200 bg-white dark:bg-zinc-900 bg-opacity-90 backdrop-blur-3xl dark:border-zinc-70"
                     : " border-opacity-0 border-zinc-200 border-transparent  dark:border-zinc-70 bg-opacity-30"
                   : " border-opacity-0 border-zinc-200 dark:border-zinc-700"
               } flex flex-col relative dark:border-zinc-700 z-10 items-center `}

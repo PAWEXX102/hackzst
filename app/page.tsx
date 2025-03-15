@@ -222,11 +222,11 @@ export default function Home() {
       } pt-[5rem] lg:px-[2rem] px-[1rem] flex-row flex flex-wrap  w-full h-full z-[2] gap-5 `}
     >
       <div
-        className={`flex flex-col w-full md:w-[25rem] h-[25rem] bg-gray-100 shadow-xl rounded-2xl gap-5 px-4`}
+        className={`flex flex-col w-full md:w-[25rem] h-[25rem] bg-gray-100 shadow-xl rounded-2xl gap-5 px-4  dark:text-zinc-100 dark:bg-zinc-600`}
       >
-        <div className="flex flex-row justify-between items-center mt-2">
-          <h1 className="text-start font-bold text-xl ">Ostatnie posiłki</h1>
-          <div className="flex flex-row  items-center">
+        <div className="flex flex-row justify-between items-center mt-2 dark:text-zinc-100 dark:bg-zinc-600">
+          <h1 className="text-start font-bold text-xl  dark:text-zinc-100 dark:bg-zinc-600">Ostatnie posiłki</h1>
+          <div className="flex flex-row  items-center dark:text-zinc-100 dark:bg-zinc-600">
             <Button
               isIconOnly
               size="sm"
@@ -328,16 +328,16 @@ export default function Home() {
             <Bar
               data={chartData}
               options={chartOptions}
-              className="bg-white dark:bg-zinc-700 rounded-lg"
+              className="bg-white dark:bg-zinc-700 rounded-lg "
             />
           </div>
         </div>
       </div>
-      <div className="flex flex-row flex-wrap gap-2">
-        <h1 className="text-start font-bold text-xl ">
+      <div className="flex flex-col flex-wrap gap-2 dark:text-zinc-100 dark:bg-zinc-600">
+        <h1 className="text-start font-bold text-xl  dark:text-zinc-100 dark:bg-zinc-600">
           Posiłki stworzone dla ciebie na podstawie ostatnio używanych produktów
         </h1>
-        <div className="flex flex-wrap justify-start gap-x-8 gap-y-3">
+        <div className="flex flex-wrap justify-start gap-x-8 gap-y-3  dark:text-zinc-100 dark:bg-zinc-600">
           {chatMessages.map((message, index) => (
             <Card key={index} content={message.content} role={message.role} />
           ))}
