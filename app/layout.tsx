@@ -11,7 +11,7 @@ import { Toaster } from "sonner";
 import DarkBackground from "./components/dark";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hackaton-preview.vercel.app/"),
+  metadataBase: new URL("https://hackzst.vercel.app/"),
   title: "FoodGenius",
   description: "AI Food Application",
   manifest: "/manifest.json",
