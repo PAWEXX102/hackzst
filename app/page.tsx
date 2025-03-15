@@ -31,6 +31,7 @@ import {
 } from "chart.js";
 import { generateChatResponse } from "@/services/gemini";
 import { useUser } from "./store/user";
+import { Card } from "./components/card";
 
 ChartJS.register(
   CategoryScale,
@@ -162,7 +163,7 @@ export default function Home() {
             id: `message-${Date.now()}`,
             content:
               "Stwórz przepis na danie na podstawie (maksymalnie 100 wyrazów) obecnych dań, które kilokalorie mieszczą się w przedziale do" +
-              (user.bmr - kalorie),
+              ((user.bmr || 0) - kalorie),
             role: "user",
             timestamp: new Date(),
           };
@@ -317,7 +318,7 @@ export default function Home() {
           <h1 className="text-start font-bold text-xl ">Statystyki</h1>
         </div>
         <div className=" flex flex-col ">
-          <h3>Twoje zapotrzebowanie kaloryczne: {user.bmr} kcal</h3>
+          <h3>Twoje zapotrzebowanie kaloryczne: {user.bmr || 0} kcal</h3>
           <h3 className="py-1 ">Spożyte wartości odżywcze:</h3>
           <p className="text-sm">Kcal:{kalorie}</p>
           <p className="text-sm">Tłuszcze:65g</p>
@@ -336,20 +337,9 @@ export default function Home() {
         <h1 className="text-start font-bold text-xl ">
           Posiłki stworzone dla ciebie na podstawie ostatnio używanych produktów
         </h1>
-        <div className="flex flex-wrap justify-start gap-8">
+        <div className="flex flex-wrap justify-start gap-x-8 gap-y-3">
           {chatMessages.map((message, index) => (
-            <div
-              key={index}
-              className={`${
-                message.role === "user"
-                  ? "hidden"
-                  : message.role === "model"
-                  ? "bg-zinc-100 shadow-lg"
-                  : "bg-red-400"
-              } p-2 rounded-xl w-[25rem]`}
-            >
-              <div className="flex flex-col my-2">{message.content}</div>
-            </div>
+            <Card key={index} content={message.content} role={message.role} />
           ))}
         </div>
       </div>
