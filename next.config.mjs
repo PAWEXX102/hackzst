@@ -15,7 +15,6 @@ const config = async (phase) => {
   };
 
   if (phase === PHASE_PRODUCTION_BUILD) {
-    // Używaj Serwist tylko w produkcji, nie w trybie dev
     const withSerwist = (await import("@serwist/next")).default({
       swSrc: "public/service-worker/app-worker.ts",
       swDest: "public/sw.js",
