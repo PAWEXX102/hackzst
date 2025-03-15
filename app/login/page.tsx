@@ -309,7 +309,7 @@ export default function Login() {
               duration: 0.2,
               ease: "easeOut",
             }}
-            className="mt-5 flex flex-col items-center justify-center relative h-max"
+            className="mt-5 flex overflow-y-auto pt-[5rem]  flex-col items-center justify-center relative h-max"
           >
             <motion.div
               initial={{
