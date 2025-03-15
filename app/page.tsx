@@ -76,7 +76,7 @@ export default function Home() {
   const [kalorie, setKalorie] = useState<number>(0);
 
   useEffect(() => {
-    var kcale = 0;
+    let kcale = 0;
     const unsubscribe = onSnapshot(
       collection(db, "obiady"),
       (querySnapshot) => {
@@ -157,7 +157,7 @@ export default function Home() {
   useEffect(() => {
     const chatResponse = async () => {
       try {
-        for (var i = 0; i < 7; i++) {
+        for (let i = 0; i < 7; i++) {
           const userMessage: Message = {
             id: `message-${Date.now()}`,
             content:
@@ -187,9 +187,9 @@ export default function Home() {
 
           setChatMessages((prevMessages) => [...prevMessages, aiMessage]);
         }
-      } catch (error) {
+      } catch (e) {
         const errorMessage: Message = {
-          id: `error-${Date.now()}`,
+          id: `${e}-${Date.now()}`,
           content:
             "Przepraszam, wystąpił błąd podczas generowania przepisu. Spróbuj ponownie później.",
           role: "model",
